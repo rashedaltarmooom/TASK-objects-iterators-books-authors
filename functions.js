@@ -41,7 +41,7 @@ function bookCountsByAuthor(authors) {
   );
   return bookcount;
 }
-console.log(bookCountsByAuthor(authors));
+//console.log(bookCountsByAuthor(authors));
 
 /**************************************************************
  * booksByColor(books):
@@ -53,9 +53,9 @@ console.log(bookCountsByAuthor(authors));
 function booksByColor(books) {
   const colors = {};
 
-  books.forEach((book) =>
-    colors.push({ author: book.color, bookCount: book.title })
-  );
+  books.forEach((book) => Object.assign(colors, { [book.color]: [] }));
+
+  books.forEach((book) => Object.assign(colors, { [book.color]: [] }));
 
   return colors;
 }
