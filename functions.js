@@ -58,6 +58,7 @@ function booksByColor(books) {
   books.forEach((book) => Object.assign(colors, { [book.color]: [] }));
 
   return colors;
+  console.log("test");
 }
 // console.log(booksByColor(books));
 
