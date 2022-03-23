@@ -58,7 +58,6 @@ function booksByColor(books) {
   books.forEach((book) => Object.assign(colors, { [book.color]: [] }));
 
   return colors;
-  console.log("test");
 }
 // console.log(booksByColor(books));
 
@@ -71,7 +70,7 @@ function booksByColor(books) {
  *    ["The Hitchhikers Guide", "The Meaning of Liff"]
  ****************************************************************/
 function titlesByAuthorName(authorName, authors, books) {
-  // Your code goes here
+  console.log("test");
 }
 // console.log(titlesByAuthorName("George R.R. Martin", authors, books));
 
