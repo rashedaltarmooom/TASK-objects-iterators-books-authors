@@ -54,7 +54,7 @@ function booksByColor(books) {
   const colors = {};
 
   books.forEach((book) =>
-    colors.push({ color: book.color, title: book.title })
+    colors.push({ author: book.color, bookCount: book.title })
   );
 
   return colors;
