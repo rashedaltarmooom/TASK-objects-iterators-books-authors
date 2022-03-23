@@ -9,9 +9,10 @@ const books = require("./books.json");
  * - returns undefined if no matching book is found
  ****************************************************************/
 function getBookById(bookId, books) {
-  // Your code goes here
+  const tests = (book) => book.name === bookId;
+  return books.find(tests);
 }
-// console.log(getBookById(12, books));
+console.log(getBookById(12, books));
 
 /**************************************************************
  * getAuthorByName(authorName, authors):
@@ -21,9 +22,11 @@ function getBookById(bookId, books) {
  * - returns undefined if no matching author is found
  ****************************************************************/
 function getAuthorByName(authorName, authors) {
-  // Your code goes here
+  const tests = (author) =>
+    author.name.toLowerCase() === authorName.toLowerCase();
+  return authors.find(tests);
 }
-// console.log(getAuthorByName("J.K. Rowling", authors));
+//console.log(getAuthorByName("J.K. Rowling", authors));
 
 /**************************************************************
  * bookCountsByAuthor(authors):
@@ -32,9 +35,13 @@ function getAuthorByName(authorName, authors) {
  *    [{ author: <NAME>, bookCount: <NUMBER_OF_BOOKS> }]
  ****************************************************************/
 function bookCountsByAuthor(authors) {
-  // Your code goes here
+  let bookcount = [];
+  authors.forEach((author) =>
+    bookcount.push({ author: author.name, bookCount: author.books.length })
+  );
+  return bookcount;
 }
-// console.log(bookCountsByAuthor(authors));
+console.log(bookCountsByAuthor(authors));
 
 /**************************************************************
  * booksByColor(books):
@@ -46,7 +53,9 @@ function bookCountsByAuthor(authors) {
 function booksByColor(books) {
   const colors = {};
 
-  // Your code goes here
+  books.forEach((book) =>
+    colors.push({ color: book.color, title: book.title })
+  );
 
   return colors;
 }
