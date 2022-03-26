@@ -9,8 +9,7 @@ const books = require("./books.json");
  * - returns undefined if no matching book is found
  ****************************************************************/
 function getBookById(bookId, books) {
-  const tests = (book) => book.name === bookId;
-  return books.find(tests);
+  return books.find((book) => book.id === bookId);
 }
 console.log(getBookById(12, books));
 
